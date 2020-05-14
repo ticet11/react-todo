@@ -10,10 +10,19 @@ import Header from "./components/layout/Header";
 import Todos from "./components/Todos";
 import "./App.css";
 
-
 class App extends Component {
     state = {
-        todos: [],
+        todos: [
+            {
+                id: uuid(),
+                title: "Check the box on the left to toggle completion of this item.",
+                completed: false,
+            },
+            {
+                id: uuid(),
+                title: "Hit the x on the right to delete this item."
+            }
+        ],
     };
 
     // Toggle Complete
@@ -34,7 +43,7 @@ class App extends Component {
             todos: [
                 ...this.state.todos.filter((item) => item.id !== id),
             ],
-        }) 
+        });
     };
 
     // Add todo item
@@ -42,11 +51,11 @@ class App extends Component {
         const newTodo = {
             id: uuid(),
             title,
-            completed: false
-        }
+            completed: false,
+        };
         this.setState({
             todos: [...this.state.todos, newTodo],
-        })
+        });
     };
 
     render() {
