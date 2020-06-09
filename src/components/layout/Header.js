@@ -5,11 +5,11 @@ function Header() {
     return (
         <header style={headerStyle}>
             <h1>TodoList</h1>
-            <Link style={linkStyle} to="/">
+            <Link style={linkStyle} to="/projects/todoapp">
                 Home
             </Link>{" "}
             |{" "}
-            <Link style={linkStyle} to="/about">
+            <Link style={linkStyle} to="/projects/todoapp/about">
                 About
             </Link>
         </header>
